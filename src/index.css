@@ -25,6 +25,9 @@
   .glass-bg {
     @apply backdrop-blur-[50px] bg-white/10;
   }
+  .glass-bg-mobile {
+    @apply backdrop-blur-[15px] bg-white/10;
+  }
    .glass-bg-dark{
     @apply backdrop-blur-[50px] bg-black/10;
   }

@@ -6,8 +6,6 @@ import MultiSelect from "react-multiple-select-dropdown-lite";
 // import "react-multiple-select-dropdown-lite/dist/index.css";
 import "../../../customDropDwon.css"; // Assuming you have some custom styles
 
-// import type { ICountry, IState, ICity } from "country-state-city";
-
 // Options for MultiSelect businessType, industrySector, and businessModel
 const businessTypes = [
   { label: "Manufacturer", value: "manufacturer" },
