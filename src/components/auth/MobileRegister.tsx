@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import postData from "../../hooks/usePost";
 import { Value } from "@radix-ui/react-select";
-import SearchIcon from "../../../public/searchWhite.png";
+import SearchIcon from "/searchWhite.png";
 import { useLoading, Spinner } from "../../hooks/useLoading";
 import { ArrowLeftCircleIcon } from "lucide-react";
 import {

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { SearchInput } from "../ui/SearchInput";
 import { UserAvatar } from "../ui/UserAvatar";
-import { FollowButton } from "../ui/FollowButton";
-import searchGray from "../../../public/searchdark.png";
+
 import {
   Label,
   Listbox,

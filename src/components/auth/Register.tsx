@@ -5,7 +5,6 @@ import { EyeClosedIcon, EyeOpenIcon } from "@radix-ui/react-icons";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { toast } from "sonner";
-import EyeClose from "../../../public/eyepassword.png";
 import postData from "../../hooks/usePost";
 import { log } from "node:console";
 import { useLoading, Spinner } from "../../hooks/useLoading";
@@ -26,8 +25,8 @@ const Register = function () {
     "Please Choose a strong password"
   );
   const formRef = useRef();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
 
   // Per-field validation functions
   const validateUsername = (v) =>
@@ -246,7 +245,7 @@ const Register = function () {
                             className="-ml-16 relative"
                             visible={
                               <img
-                                src={EyeClose}
+                                src="/eyepassword.png"
                                 alt="hide"
                                 className="w-5 h-5 cursor-pointer opacity-70"
                               />

@@ -1,5 +1,4 @@
 import React from "react";
-import ArrowImg from "../../../public/rr.png";
 import { Link } from "react-router-dom";
 
 interface EditprofileProps {

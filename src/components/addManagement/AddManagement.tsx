@@ -1,7 +1,6 @@
 import React from "react";
 import { BarChart, Bar, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { FaUsers, FaRupeeSign, FaClock } from "react-icons/fa";
-import smallArrow from  "../../../public/arrowBtn.png"
 import userGroup from  "../../../public/userGroup.png"
 import handRupee from "../../../public/HandRupee.png"
 import rupeeBag from  "../../../public/RupeeBag.png"
@@ -26,7 +25,7 @@ const Dashboard = () => {
       {/* Header */}
       <div className="w-[220px] h-[48px] flex justify-between items-center">
         <button className="bg-blue-600 w-[199px] text-white flex justify-between items-center px-5 py-2 rounded-full text-sm font-medium">
-         <Link to="/createaddoptions" className="flex items-center gap-3">Create New Add <span><img src={smallArrow} alt="" className="w-3 h-3 -rotate-90"/></span></Link></button>
+         <Link to="/createaddoptions" className="flex items-center gap-3">Create New Add <span><img src="/arrowBtn.png" alt="" className="w-3 h-3 -rotate-90"/></span></Link></button>
         
       </div>
 

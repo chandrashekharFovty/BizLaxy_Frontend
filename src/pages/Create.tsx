@@ -3,11 +3,6 @@ import CreateStory from "../components/feed/CreatePost/CreateStory";
 import CreatePost from "../components/feed/CreatePost/CreatePost";
 import Product from "../components/feed/CreatePost/Product";
 
-import addpost from '../../public/addpost.png';
-import addeduvid from '../../public/addeduvid.png';
-import addpitch from '../../public/addpitch.png';
-import addproduct from '../../public/addProduct.png';
-import addStory from '../../public/addStory.png';
 
 function Create() {
   const [showCreatePopover, setShowCreatePopover] = useState(true);
@@ -72,7 +67,7 @@ function Create() {
                   setShowCreatePopover(false);
                 }}
               >
-                <img src={addStory} alt="Add Story" className="w-7 h-7" />
+                <img src="/addStory.png" alt="Add Story" className="w-7 h-7" />
                 Story
               </button>
             </div>
@@ -86,7 +81,7 @@ function Create() {
                   setShowCreatePopover(false);
                 }}
               >
-                <img src={addpost} alt="Add Post" className="w-7 h-7" />
+                <img src="/addpost.png" alt="Add Post" className="w-7 h-7" />
                 Post
               </button>
             </div>
@@ -99,7 +94,7 @@ function Create() {
                   setShowCreateEduvidPopover(!showCreateEduvidPopover);
                 }}
               >
-                <img src={addeduvid} alt="Add Eduvid" className="w-7 h-7" />
+                <img src="addEduvid.png" alt="Add Eduvid" className="w-7 h-7" />
                 Eduvid
               </button>
               {showCreateEduvidPopover && (
@@ -119,7 +114,7 @@ function Create() {
                   alert('Pitch option clicked'); // or setShowCreatePitchPopover(true)
                 }}
               >
-                <img src={addpitch} alt="Add Pitch" className="w-7 h-7" />
+                <img src="/addPitch.png" alt="Add Pitch" className="w-7 h-7" />
                 Pitch
               </button>
             </div>
@@ -133,7 +128,7 @@ function Create() {
                   setShowCreatePopover(false);
                 }}
               >
-                <img src={addproduct} alt="Add Product" className="w-7 h-7" />
+                <img src="/addProduct.png" alt="Add Product" className="w-7 h-7" />
                 Product
               </button>
             </div>
