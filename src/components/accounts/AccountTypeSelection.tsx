@@ -57,15 +57,15 @@ const SelectAccountType = () => {
   return (
     <div className="flex min-h-screen min-w-screen overflow-x-hidden">
       {/* Left side */}
-      <div className="max-w-[500px] h-[750px] fixed bg-blue-600 text-white flex overflow-hidden items-center justify-center">
+      <div className="max-w-[500px] w-[420px] h-screen pt-[33%] fixed bg-blue-600 text-white flex overflow-hidden items-center justify-center">
         <InfoCrousel InfoBoxes={InfoBox} />
       </div>
 
       {/* Right side */}
       <div className="w-[1012px] bg-white my-[60px] ml-[470px] mr-[50px]">
         <div className="w-[780px] h-[58px] flex flex-col gap-[6px]">
-          <h3 className="text-2xl font-bold">Select Account Type</h3>
-          <p className="text-[16px] font-normal text-gray-500">
+          <h3 className="text-xl font-bold">Select Account Type</h3>
+          <p className="text-[14px] font-normal text-gray-500">
             We’ll use this to personalize your experience and unlock relevant
             features.
           </p>
@@ -92,7 +92,7 @@ const SelectAccountType = () => {
                 // title={opt.title}
                 // desc={opt.desc}
                 // selected={selected === opt.title}
-                className="w-[122px] h-[55px] cursor-pointer mt-6 px-6 py-2 border text-lg rounded-[10px] border-[#B0B0B0] text-white font-semibold bg-[#1C4BC4] hover:bg-blue-700"
+                className="w-[122px] h-[55px] cursor-pointer mt-6 px-6 py-2 border text-lg rounded-[10px] border-[#B0B0B0] text-white font-semibold bg-gradient-to-br from-blue-600 to-purple-600 hover:bg-blue-700"
                 //onClick={() => setSelected(opt.title)}
                 //onClick={() => setSelected(opt.title)}
                 onClick={() =>

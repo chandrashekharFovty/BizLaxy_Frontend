@@ -1,10 +1,13 @@
 import React from "react";
 import { FieldHead, formHeadConfig, UserType } from "./FormConfig";
 import InfoCarousel from "./InfoCrousel";
-import CompanyForm from "./CompanyForm";
-import ProfessionalForm from "./ProfessionalForm";
-import LearnerForm from "./LearnerForm";
-import StartupForm from "./StartupForm";
+import CompanyForm from "./infoForms/CompanyForm";
+import ProfessionalForm from "./infoForms/ProfessionalForm";
+import LearnerForm from "./infoForms/LearnerForm";
+import InvestorForm from "./infoForms/StartupForm";
+import StartupIdeaFrom from "./infoForms/StartupForm";
+import BusinessOwnerForm from "./infoForms/StartupForm";
+import StartupForm from "./infoForms/StartupForm";
 
 const InfoBox = [
   {
@@ -33,11 +36,11 @@ export default function DynamicForm({ userType }: Props) {
   return (
     <div className="flex min-h-screen min-w-screen overflow-x-hidden">
       {/* Left side */}
-      <div className="max-w-[500px] h-[750px] fixed bg-blue-600 text-white flex overflow-x-hidden items-center justify-center">
+      <div className="max-w-[500px] w-[420px] h-screen pt-[33%] fixed bg-blue-600 text-white flex overflow-hidden items-center justify-center">
         <InfoCarousel InfoBoxes={InfoBox} />
       </div>
       {/* Right side */}
-      <div className="w-[1012px] mx-auto bg-white h-auto max-screen my-[60px] ml-[450px] mr-[50px]">
+      <div className="w-[1012px] mx-auto bg-white h-auto max-w-screen my-[60px] ml-[450px] mr-[50px]">
         {headings.map((headings: FieldHead) => (
           <div className="w-[952px] h-[58px] flex flex-col gap-[6px] mx-auto">
             <h3 className="text-2xl font-bold">{headings.formheading}</h3>
@@ -47,11 +50,11 @@ export default function DynamicForm({ userType }: Props) {
           </div>
         ))}
        {userType === 1 ? <CompanyForm/> : ""}
-       {userType === 2 ? <CompanyForm/> : ""}
+       {userType === 2 ? <InvestorForm/> : ""}
        {userType === 3 ? <StartupForm/> : ""}
        {userType === 4 ? <LearnerForm/> : ""}
-       {userType === 5 ? <CompanyForm/> : ""}
-       {userType === 6 ? <CompanyForm/> : ""}
+       {userType === 5 ? <StartupIdeaFrom/> : ""}
+       {userType === 6 ? <BusinessOwnerForm/> : ""}
        {userType === 7 ? <ProfessionalForm/> : ""}
       </div>
     </div>

@@ -23,7 +23,8 @@ export default function InfoCarousel({ InfoBoxes }: InfoBoxProps): JSX.Element {
   const { title, descp } = InfoBoxes[currentIndex];
 
   return (
-    <div className="w-[420px] h-[136px] p-5">
+    <div className="w-[420px] max-w-[500px] flex justify-center h-screen overflow-hidden px-5">
+      <div className="w-full h-full overflow-hidden">
       <h2 className="text-2xl font-semibold mb-2 h-[31px]">{title}</h2>
       <p className="text-lg font-normal h-[99px] mt-[10px] overflow-hidden">{descp}</p>
       <div className="flex mt-5 gap-2">
@@ -35,6 +36,7 @@ export default function InfoCarousel({ InfoBoxes }: InfoBoxProps): JSX.Element {
             onClick={() => setCurrentIndex(idx)}
           />
         ))}
+      </div>
       </div>
     </div>
   );

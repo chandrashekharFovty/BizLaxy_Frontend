@@ -1,14 +1,10 @@
-import { useState } from "react";
 import React from "react";
 import ProfileGallery from "@/components/profile/ProfileGallery";
-import ProfileTabs from "@/components/profile/ProfileTabs";
 import Sidebar from "@/components/layout/Sidebar";
-import searchIcon from  "../../public/searchdark.png";
-import { SearchIcon } from "lucide-react";
+import { SearchInput } from "@/components/ui/SearchInput";
 
-type TabType = "post" | "eduvid" | "pitch" | "shop";
 const ExplorePage: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<TabType>("post");
+
 
   // Sample gallery items
   const galleryItems = [
@@ -75,24 +71,17 @@ const ExplorePage: React.FC = () => {
   ];
   return (
     <>
-    <Sidebar/>
-      <div className="dark:bg-gray-800 dark:text-white  ml-[244px] z-0 mr-3 mb-3 scrollbar-hide">
-        <div className="dark:bg-gray-800 dark:text-white ml-5 mt-[20px]">
-          <div className="dark:bg-gray-800 dark:text-white w-[98%] h-[40px] my-5">
-            <div className="dark:border-solid dark:border-[#a89bfc] mt-4 h-full flex border focus:border-[#a952e4] border-[#b9b9b9] rounded-full px-4">
-              <img src={searchIcon} alt="" className="w-5 h-5 my-auto"/>
-              <input
-                type="text"
-                placeholder="Search..."
-                required
-                className="dark:bg-gray-800 dark:text-white outline-none font-medium ml-1 px-2 text-[16px] w-full h-full"
-              />
-            </div>
-          </div>
+    <div className="dark:bg-gray-800 dark:text-white flex top-0 left-0 w-full h-full z-10">
+
+      <Sidebar />
+      <div className="dark:bg-gray-800 dark:text-white ml-[244px] z-0 mr-3 scrollbar-hide">
+        <div className="dark:bg-gray-800 dark:text-white m-5">
+          <SearchInput/>
           {/* <ProfileTabs defaultTab={activeTab} onTabChange={setActiveTab} /> */}
           <ProfileGallery items={galleryItems} />
         </div>
       </div>
+    </div>
     </>
   );
 };

@@ -1,21 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import TabList from "../profile/TabList";
-import addeduvid from "../../../public/addEduvid.png";
-import addStory from "../../../public/addStory.png";
-import addproduct from "../../../public/addProduct.png";
-import addpost from "../../../public/addPost.png";
-import addpitch from "../../../public/addPitch.png";
-import addsettings from "../../../public/settings.png";
-import addmoon from "../../../public/moon.png";
-import shop from "../../../public/shop.png";
-import isShop from "../../../public/isShop.png";
-import isExplore from "../../../public/isExplore.png";
-import isPitch from "../../../public/isPitch.png";
-import isMessages from "../../../public/isMessages.png";
-import isNotifications from "../../../public/isNotifications.png";
-import isEduvid from "../../../public/isEduvid.png";
 import { CgDetailsMore } from "react-icons/cg";
 import { GoHome } from "react-icons/go";
 import { FaChalkboardTeacher } from "react-icons/fa";
@@ -23,16 +8,9 @@ import { PiGraduationCapBold } from "react-icons/pi";
 import { CiShop } from "react-icons/ci";
 import { BiWorld } from "react-icons/bi";
 import { LuMessageCircleMore } from "react-icons/lu";
-import { MdOutlineNotificationsActive } from "react-icons/md";
+import { MdAnnouncement, MdOutlineNotificationsActive, MdCampaign } from "react-icons/md";
 import { CgAddR } from "react-icons/cg";
-import isAddsMa from "../../../public/isAddApear.png";
-import isMore from "../../../public/menuSelected.png";
-import StoryMedia from "../../../public/SelectStoryMedia.png";
-import PostCreation from "../feed/PostCreation";
-import { Post } from "../feed/Post";
-import { nextDay } from "date-fns";
-import CreateStory from "../feed/CreatePost/CreateStory";
-import CreatePost from "../feed/CreatePost/CreatePost";
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 import Create from "../../pages/Create";
 import Settings from "../../pages/Settings";
 
@@ -263,15 +241,16 @@ const Sidebar: React.FC = () => {
         </Link>
 
         <Link to="/adds" className={linkClass("/adds")}>
-          <div className="flex gap-4 items-center w-[220px] h-[48px] cursor-pointer">
-            <img
+          <div className="flex gap-3 items-center w-[220px] h-[48px] cursor-pointer">
+            {/* <img
               src={
                 location.pathname.startsWith("/adds")
                   ? isAddsMa // active icon
                   : "https://cdn.builder.io/api/v1/image/assets/22e8f5e19f8a469193ec854927e9c5a6/eac3a74db1e6e1ba057a37af1132896da819100f?placeholderIfAbsent=true"
               }
               className="aspect-[1] object-containw-6 w-7 h-7 shrink-0"
-            />
+            /> */}
+            <MdCampaign size={32} className="dark:text-white aspect-[1] object-containw-6 h-8 w-8 shrink-0"/>
             <div className="flex overflow-hidden max-lg:hidden w-full h-[24px] text-[20px] font-normal">
               <div className="dark:text-gray-300  cursor-pointer  overflow-hidden">
                 Ad's Manager
