@@ -125,8 +125,8 @@
   color: black;
 }
 .msl-chip {
-  background: #e6f4fa;
-  color: #0351ff;
+  background: #dde2e6;
+  color: #000;
   border-radius: 5px;
   padding: 3px 3px 3px 6px;
   white-space: nowrap;
@@ -194,14 +194,13 @@
 }
 .msl-option:focus,
 .msl-options .msl-option:hover {
-  background: #bed3ff;
+  background: #dde2e6;
 }
 .msl-option-active {
-  background: #e6f4fa;
-  color: #0351ff;
+  background: #dde2e6;
 }
 .msl-option-disable {
-  color: rgba(0, 0, 0, 0.3);
+  color: #000;
 }
 .msl-btn {
   border-radius: 50%;
@@ -222,7 +221,7 @@
 .msl-clear-btn {
   width: 25px;
   height: 25px;
-  color: #0351ff;
+  color: #000;
 }
 .msl-arrow-btn:hover,
 .msl-clear-btn:hover {
@@ -231,7 +230,7 @@
 .msl-arrow-icn > line,
 .msl-close-icn > line {
   stroke-width: 1;
-  color: #0351ff;
+  color: #000;
 }
 .msl-arrow-icn,
 .msl-chip-delete {
@@ -246,7 +245,7 @@
   color: rgba(0, 0, 0, 0.6);
 }
 .msl-chip-delete:hover {
-  background: #bed3ff;
+  background: #dde2e6;
 }
 .msl-chip-delete .msl-close-icn > line {
   stroke-width: 1;

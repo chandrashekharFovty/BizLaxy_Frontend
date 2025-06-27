@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Editprofile from "./EditProfile";
 import { Link } from "react-router-dom";
-import { ProfileInfo } from "./ProfileInfo";
+import { ProfileInfo } from "./AboutProfile";
 
 // const [open, setOpen] = useState(false);
 
@@ -122,7 +122,9 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({
             <button className="w-[163px] h-[54px] text-[#050505] self-stretch hover:border-[color:var(--Btn-grdt,#1C4BC4)] hover:bg-[color:var(--Btn-grdt,#f1e9ff)] border bg-[rgba(239,239,239,1)] gap-2.5 my-auto px-5 py-2.5 rounded-[8px] max-md:px-5">
               Share Profile
             </button>
-            <ProfileInfo />
+             <button className="w-[163px] h-[54px] text-[#050505] self-stretch hover:border-[color:var(--Btn-grdt,#1C4BC4)] hover:bg-[color:var(--Btn-grdt,#f1e9ff)] border bg-[rgba(239,239,239,1)] gap-2.5 my-auto px-5 py-2.5 rounded-[8px] max-md:px-5">
+              Info
+            </button>
           </div>
         </div>
         <div className="text-base text-[#050505] font-normal tracking-[-0.16px] mt-5 max-md:max-w-full">

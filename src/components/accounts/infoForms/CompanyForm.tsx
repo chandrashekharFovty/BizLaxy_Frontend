@@ -227,13 +227,13 @@ const CompanyForm: React.FC = () => {
   console.log("Progress Percentage:", progressPercentage);
   // Simulate progress bar width
   const progressBarWidth = `${Math.min(progressPercentage, 100)}%`;
-  console.log("Progress Bar Width:", progressBarWidth);
+  //console.log("Progress Bar Width:", progressBarWidth);
 
   // Update the width of the progress bar dynamically
   const progressBarStyle = {
     width: progressBarWidth,
   };
-  console.log("Progress Bar Style:", progressBarStyle);
+  //console.log("Progress Bar Style:", progressBarStyle);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -262,7 +262,7 @@ const CompanyForm: React.FC = () => {
             key={index}
           >
             <div
-              className={`bg-indigo-600 h-2.5 rounded-full dark:bg-indigo-500 ${
+              className={`bg-gradient-to-tr from-indigo-600 to-purple-500 h-2.5 rounded-full dark:bg-indigo-500 ${
                 index < progress ? "w-full" : "w-0"
               }`}
             ></div>
@@ -363,7 +363,7 @@ const CompanyForm: React.FC = () => {
               type="button"
               onClick={() => handleStageSelect("Early")}
               className={`px-3 py-2 rounded-[6px] w-auto ${
-                form.companyStage === "Early" ? "bg-[#bce2fd]" : "bg-[#EAF6FF]"
+                form.companyStage === "Early" ? "bg-gradient-to-br from-indigo-600 to-purple-500 text-white" : "bg-[#EAF6FF]"
               } border border-[#BED6FF] text-sm`}
             >
               Early Stage
@@ -372,7 +372,7 @@ const CompanyForm: React.FC = () => {
               type="button"
               onClick={() => handleStageSelect("Growth")}
               className={`px-3 py-2 rounded-[6px] w-auto ${
-                form.companyStage === "Growth" ? "bg-[#bce2fd]" : "bg-[#EAF6FF]"
+                form.companyStage === "Growth" ? "bg-gradient-to-br from-indigo-600 to-purple-500 text-white" : "bg-[#EAF6FF]"
               } border border-[#BED6FF] text-sm`}
             >
               Growth Stage
@@ -381,7 +381,7 @@ const CompanyForm: React.FC = () => {
               type="button"
               onClick={() => handleStageSelect("Mature")}
               className={`px-3 py-2 rounded-[6px] w-auto ${
-                form.companyStage === "Mature" ? "bg-[#bce2fd]" : "bg-[#EAF6FF]"
+                form.companyStage === "Mature" ? "bg-gradient-to-br from-indigo-600 to-purple-500 text-white" : "bg-[#EAF6FF]"
               } border border-[#BED6FF] text-sm`}
             >
               Mature Stage

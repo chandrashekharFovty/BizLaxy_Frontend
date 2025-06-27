@@ -158,16 +158,16 @@ export function RightSidebar() {
                   top: 38,
                   left: 0,
                   right: 0,
-                  background: "#fff",
+               
                   listStyle: "none",
                   margin: 0,
                   marginTop: 5,
-                  padding: 0,
+                
                   maxHeight: 200,
                   overflowY: "auto",
                   zIndex: 10,
                 }}
-                className="dark:bg-gray-800 dark:text-white bg-white text-black border border-[#a89bfc] rounded-xl shadow-lg"
+                className="dark:bg-gray-800 py-1 dark:text-white bg-white text-black border border-[#a89bfc] rounded-xl shadow-lg"
               >
                 {filtered.map((user) => (
                   <li
@@ -178,11 +178,13 @@ export function RightSidebar() {
                     }}
                     style={{
                       display: "flex",
+                      flexDirection:"row",
                       alignItems: "center",
-                      padding: 8,
                       cursor: "pointer",
                     }}
+                  className="dark:bg-gray-800 dark:text-white gap-3 px-6 py-1"
                   >
+                    <div className="">
                     <img
                       src={user.avatar}
                       alt=""
@@ -190,10 +192,17 @@ export function RightSidebar() {
                         width: 32,
                         height: 32,
                         borderRadius: "50%",
-                        marginRight: 8,
+                        marginRight: 0,
                       }}
                     />
+                </div>
+                    <div className="overflow-hidden flex flex-col gap-1 justify-center text-sm text-left font-normal leading-none">
                     {user.username}
+                    <p className="text-gray-400 text-[10px]">{user.followsYou
+                            ? "Follows you"
+                            : `Followed by ${user.followedBy}`}</p>
+                          
+                        </div>
                   </li>
                 ))}
               </ul>
