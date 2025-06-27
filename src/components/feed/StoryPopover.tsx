@@ -18,24 +18,24 @@ const StoryPopover = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="absolute ml-[90%]">
       <MoreHorizontal
         onClick={() => setOpen(!open)}
         className="cursor-pointer justify-end text-white"
       />
       {open && (
-        <div className="absolute -ml-[300px] mt-[271px] bg-gray-100 border rounded-xl shadow-md z-10 w-[300px] h-[159px] text-sm">
+        <div className="relative mt-[165%] -ml-[100%] bg-gray-100 border rounded-xl shadow-md z-10 w-[300px] h-[159px] text-sm">
           <div
-            className="pl-10 border-b-2"
+            className="pl-5 border-b-2"
             onClick={() => showToast("Muted the creator")}
           >
-            <div className="cursor-pointer h-[53px] font-medium flex gap-2 items-center">
+            <div className="cursor-pointer h-[53px] text-black font-medium flex gap-2 items-center">
               <img src={Mute} alt="" className="w-5 h-5" />
               Mute This User
             </div>
           </div>
           <div
-            className="pl-10 border-b-2"
+            className="pl-5 border-b-2"
             onClick={() => showToast("Reported the creator")}
           >
             <div className="cursor-pointer h-[53px] font-medium text-red-600 flex gap-2  items-center">
@@ -43,8 +43,8 @@ const StoryPopover = () => {
               Report This Account
             </div>
           </div>
-          <div className="pl-10" onClick={() => setOpen(!open)}>
-            <div className="cursor-pointer h-[53px] font-normal flex gap-2 items-center"><X/>Cancel</div>
+          <div className="pl-5" onClick={() => setOpen(!open)}>
+            <div className="cursor-pointer h-[53px] text-black font-normal flex gap-2 items-center"><X/>Cancel</div>
           </div>
         </div>
       )}

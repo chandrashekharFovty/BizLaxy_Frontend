@@ -21,7 +21,7 @@ const Homepage = () => {
     {/* Page content */}
     <div className="w-screen h-screen flex gap-0 overflow-x-hidden">
       <div className="xl:w-1.5/12 md:overflow-hidden z-40"><Sidebar/></div>
-      <div className="ml-[11%]  w-8/12"><PostList/></div>
+      <div className="ml-[11.8%]  w-8/12"><PostList/></div>
        {/* Right Sidebar */}
             <div className="fixed right-0 top-0 w-[350px] h-full z-40 bg-white">
               <RightSidebar />

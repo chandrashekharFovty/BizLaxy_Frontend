@@ -1,46 +1,42 @@
-import React, { useState } from "react";
-import redHeart from  "../../../public/LikeRed.png";
-import grayHeart from  "../../../public/likeGray.png";
-import postSave from  "../../../public/postSave.png";
-import isPostSaved from  "../../../public/isPostSaved.png";
-import isDocumented from  "../../../public/isDocumented.png";
+// remove or comment out unwanted exports
+// export function SavePostBadge { ... }
+// export function PostSave { ... }
 
+import { useState } from "react";
 
-interface SavePostBadgeProps {
-  type:  "savePost" | "document";
-  initialActive?: boolean;
-}
+export function SaveIcon({
+  size = 24,
+  color = "#000",
+  filled = false,
+}: {
+  size?: number;
+  color?: string;
+  filled?: boolean;
+}) {
 
-export function SavePostBadge({ type, initialActive = false }: SavePostBadgeProps) {
-  const [isActive, setIsActive] = useState(initialActive);
+  const [isFilled, setIsFilled] = useState(true);
+  
 
-  const handleClick = () => {
-    setIsActive(!isActive);
-  };
-
-  const renderIcon = () => {
-    if (type === "document") {
-      return (
-        <img
-          src={isActive ? isDocumented : isDocumented}
-          alt="document"
-          className="w-4 h-5"
-        />
-      );
-    } else if (type == "savePost") {
-       return (
-          <img
-          src={isActive ? isPostSaved : postSave}
-          alt="savePost"
-          className="w-4 h-5"
-        />
-       );
-    }
-  };
-
-  return (
-    <div className="self-stretch my-auto rounded-[50px] cursor-pointer" onClick={handleClick}>
-        {renderIcon()}
-      </div>
+  return isFilled ? (
+    <svg onClick={() => setIsFilled(false) } width={size} height={size} viewBox="0 0 24 24" fill={color}  stroke={color} strokeWidth="2"
+    className="dark:stroke-white">
+      <path d="M6 4C5.447 4 5 4.447 5 5v15l7-6 7 6V5c0-.553-.447-1-1-1H6z" />
+    </svg>
+  ) : (
+    <svg
+    onClick={() => setIsFilled(true) }
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#000"
+      strokeWidth="2"
+      className="dark:fill-white dark:stroke-white"
+    >
+      <path d="M6 4c-.553 0-1 .447-1 1v15l7-6 7 6V5c0-.553-.447-1-1-1H6z" />
+    </svg>
   );
 }
+
+// keep default export if needed; otherwise, remove it
+export default SaveIcon;

@@ -113,11 +113,11 @@ export function PostList() {
         timeAgo: "1 hour ago",
       },
       content: {
-        title: "This is a ver ull description of the post.",
-        titleLimit: 30, // 🔹 Set title character limit here
+        title: "This is a ver all description of the post.This is a ver all description of the post.",
+        titleLimit: 90, // 🔹 Set title character limit here
         description:
           "“From a spark of an idea to building something real — every step, sprint, and setback has shaped this journey. Here’s to the sleepless nights, early wins, and relentless belief in something greater. 🔗 #FounderLife #StartupJourney",
-        descpLimit: 50, // 🔹 Set description character limit here
+        descpLimit: 159, // 🔹 Set description character limit here
       },
       engagement: {
         likes: formatNumber("1100"),
@@ -138,10 +138,10 @@ export function PostList() {
       },
       content: {
         title: "This is a ver ull description of the post.",
-        titleLimit: 30, // 🔹 Set title character limit here
+        titleLimit: 90, // 🔹 Set title character limit here
         description:
           "Dream big. Hustle hard. Repeat. Pioneering new paths in [your industry] and proving that ambition paired with action wins every time. 🚀 #Innovate #BusinessGoals",
-        descpLimit: 50, // 🔹 Set description character limit here
+        descpLimit:165, // 🔹 Set description character limit here
       },
       engagement: {
         likes: formatNumber("10050"),
@@ -160,10 +160,10 @@ export function PostList() {
       },
       content: {
         title: "This is a ver ull description of the post.",
-        titleLimit: 30, // 🔹 Set title character limit here
+        titleLimit: 90, // 🔹 Set title character limit here
         description:
           "Not just polished pitches — here’s the real side of startup life: late-night brainstorms, coffee-fueled sprints, and team huddles that make the dream possible. What’s the hustle behind your best idea? 👇 #StartupVibes #TeamWork",
-        descpLimit: 50, // 🔹 Set description character limit here
+        descpLimit: 160, // 🔹 Set description character limit here
       },
       engagement: {
         likes: formatNumber("40686"),
@@ -181,11 +181,11 @@ export function PostList() {
         timeAgo: "1 hour ago",
       },
       content: {
-        title: "This is a ver ull description of the post.",
-        titleLimit: 30, // 🔹 Set title character limit here
+        title: "This is a ver all description of the post.description of the post.",
+        titleLimit: 90, // 🔹 Set title character limit here
         description:
           "Passion turned into purpose — but I need your voice: Whats the #1 challenge you face when launching a new idea? Lets chat in the comments & build solutions together. 💬👇 #GrowthMindset #EntrepreneurshipInspired by engaging caption tips like asking questions and CTAs",
-        descpLimit: 50, // 🔹 Set description character limit here
+        descpLimit: 160, // 🔹 Set description character limit here
       },
       engagement: {
         likes: formatNumber("44686"),

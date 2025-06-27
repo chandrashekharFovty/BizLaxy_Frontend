@@ -8,12 +8,12 @@ import CopyLink from "../../../public/CopyURL.png";
 import userView from "../../../public/user01.png";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { SavePostBadge } from "../ui/SavePostBadge";
 import {
   Dialog,
   DialogBackdrop,
   DialogPanel,
 } from "@headlessui/react";
+import { SaveIcon } from "../ui/SavePostBadge";
 
 export function PostModal() {
   const [open, setOpen] = useState(false);
@@ -30,37 +30,37 @@ export function PostModal() {
 
   const actions = [
     {
-      icon: <SavePostBadge type="savePost" />,
+      icon: <SaveIcon />,
       label: "Save for Later",
       msg: "Post Saved",
     },
     {
-      icon: <img src={shareLink} alt="share" className="w-5 h-5" />,
+      icon: <img src="/shareLink.png" alt="share" className="w-5 h-5" />,
       label: "Share Post",
       msg: "Post Shared",
     },
     {
-      icon: <img src={Notify} alt="notify" className="w-5 h-5" />,
+      icon: <img src="/Notify.png" alt="notify" className="w-5 h-5" />,
       label: "Turn On Notifications",
       msg: "On Notifications",
     },
     {
-      icon: <img src={Mute} alt="mute" className="w-5 h-5" />,
+      icon: <img src="/mute.png" alt="mute" className="w-5 h-5" />,
       label: "Mute the User",
       msg: "Mute the Creator",
     },
     {
-      icon: <img src={CopyLink} alt="copy" className="w-5 h-5" />,
+      icon: <img src="/CopyURL.png" alt="copy" className="w-5 h-5" />,
       label: "Copy Post Link URL",
       msg: "Link Copied",
     },
     {
-      icon: <img src={userView} alt="view" className="w-5 h-5" />,
+      icon: <img src="/user01.png" alt="view" className="w-5 h-5" />,
       label: "View Profile",
       msg: "View Creator Profile",
     },
     {
-      icon: <img src={Report} alt="report" className="w-5 h-5" />,
+      icon: <img src="/Report.png" alt="report" className="w-5 h-5" />,
       label: "Report this Account",
       msg: "Report the Creator",
       danger: true,
@@ -71,13 +71,13 @@ export function PostModal() {
     <div>
       <button
         onClick={() => setOpen(true)}
-        className="rounded-md py-2 cursor-pointer justify-center text-black relative text-sm z-10"
+        className="dark:text-white rounded-md py-2 cursor-pointer justify-center text-black relative text-sm z-10"
       >
         <MoreHorizontal />
       </button>
 
       <Dialog open={open} onClose={setOpen} className="relative z-50">
-        <DialogBackdrop className="fixed inset-0 bg-gray-500/75 transition-opacity" />
+        <DialogBackdrop className="fixed inset-0 bg-gray-800 transition-opacity" />
 
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <DialogPanel className="w-full max-w-md mx-auto mt-20 bg-white rounded-2xl border shadow-xl overflow-hidden">

@@ -2,14 +2,10 @@ import React, { useEffect, useState } from "react";
 import { UserAvatar } from "../ui/UserAvatar";
 import { FollowButton } from "../ui/FollowButton";
 import { CountBadge } from "../ui/CountBadge";
-import { SavePostBadge } from "../ui/SavePostBadge";
 import PostPopover, { PostModal } from "./PostPopover";
+import { SaveIcon } from "../ui/SavePostBadge";
 
-const images = [
-  "/poster03.png",
-  "/poster01.png",
-  "/poster02.png",
-];
+const images = ["/poster03.png", "/poster01.png", "/poster02.png"];
 
 interface PostProps {
   user: {
@@ -58,6 +54,13 @@ export function Post({
   //   content.title.length > content.titleLimit
   //     ? content.title.slice(0, content.titleLimit) + "..."
   //     : content.title;
+//  function PostSave({ isSaved, onSaveToggle }) {
+//    return (
+//      <button onClick={onSaveToggle} aria-label="Save">
+//        <SaveIcon filled={isSaved} color={isSaved ? 'blue' : 'gray'} size={28} />
+//      </button>
+//    );
+//  }
 
   const truncatedDescription =
     content.description.length > content.descpLimit
@@ -75,7 +78,8 @@ export function Post({
 
   const goToSlide = (index: number) => setCurrentIndex(index);
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % images.length);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+  const prevSlide = () =>
+    setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
 
   return (
     <div className="dark:border-white dark:border dark:border-gradient dark:from-white dark:to-black dark:glass-bg-dark dark:bg-gray-800 dark:text-white bg-white shadow-[0px_0px_5px_rgba(0,0,0,0.3)] p-5 rounded-xl w-full relative z-10">
@@ -84,7 +88,9 @@ export function Post({
           <UserAvatar src={user.avatar} />
           <div className="flex flex-col gap-0">
             <div className="flex items-center gap-2">
-              <span className="dark:text-white text-[#141414] text-base font-medium">{user.name}</span>
+              <span className="dark:text-white text-[#141414] text-base font-medium">
+                {user.name}
+              </span>
               {showMoreOptions && (
                 <img
                   src="https://cdn.builder.io/api/v1/image/assets/22e8f5e19f8a469193ec854927e9c5a6/9e55e48d50c24f504973bb6ca3fab7e2ea80bba0?placeholderIfAbsent=true"
@@ -95,10 +101,12 @@ export function Post({
                 <img src="/OfficialIcon.png" className="w-3 h-3" />
               )}
               {showFollowButton && (
-                <FollowButton isFollowing={isFollowing} onClick={handleFollowToggle} />
+                <FollowButton/>
               )}
             </div>
-            <span className="text-[#707070] dark:text-gray-300 text-xs mt-[-5px]">{user.timeAgo}</span>
+            <span className="text-[#707070] dark:text-gray-300 text-xs mt-[-5px]">
+              {user.timeAgo}
+            </span>
           </div>
         </div>
 
@@ -120,7 +128,7 @@ export function Post({
                 onClick={() => setShowFullDescription(!showFullDescription)}
                 className="text-blue-400 text-[12px] ml-1 hover:underline"
               >
-                {showFullDescription ? "..." : "..."}
+                {showFullDescription ? "seee less" : "see more"}
               </button>
             )}
           </div>
@@ -133,10 +141,16 @@ export function Post({
                 className="w-full h-[650px] object-cover"
               />
 
-              <button onClick={prevSlide} className="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-transparent text-xl text-[#BABABA] border rounded-full">
+              <button
+                onClick={prevSlide}
+                className="absolute top-1/2 left-2 -translate-y-1/2 p-2 bg-transparent text-xl text-[#BABABA] border rounded-full"
+              >
                 &lt;
               </button>
-              <button onClick={nextSlide} className="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-transparent text-xl text-[#BABABA] border rounded-full">
+              <button
+                onClick={nextSlide}
+                className="absolute top-1/2 right-2 -translate-y-1/2 p-2 bg-transparent text-xl text-[#BABABA] border rounded-full"
+              >
                 &gt;
               </button>
 
@@ -162,11 +176,11 @@ export function Post({
           <CountBadge count={engagement.comments} type="comment" />
           <CountBadge count={engagement.shares} type="share" />
         </div>
-     <div className="cursor-pointer flex gap-5">
-  {/* <SavePostBadge type="document" /> */}
-  <SavePostBadge type="savePost" />
-</div>
-
+        <div className="cursor-pointer flex gap-5">
+          {/* <SavePostBadge type="document" /> */}
+          {/* <SavePostBadge type="saveP  ost" /> */}
+          <SaveIcon/>
+        </div>
       </div>
     </div>
   );

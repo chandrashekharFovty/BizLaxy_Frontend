@@ -362,7 +362,7 @@ export default function PhoneInputWithModal() {
   const validatePhone = (v) =>
     !v
       ? "Please Enter phone"
-      : !/^\d{10}$/.test(v) && "Please Phone must be 10 digits";
+      : !/^\d{0-9}$/.test(v) && "Please Phone must be digits";
 
   const onPhoneChange = (e) => {
     const v = e.target.value;
