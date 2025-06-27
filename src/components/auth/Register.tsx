@@ -193,9 +193,10 @@ const Register = function () {
                         }`}
                       />
                     </div>
-                    {errors.fullname && (
-                      <p className="inputBoxError">{errors.fullname}</p>
-                    )}
+                    {errors.fullname ? (
+                      <p className="inputBoxError">{errors.fullname}</p> 
+                    ) : (
+                      <p className="inputBoxError">{showError}{showSuccess}</p>)}
                   </div>
                   <div className="w-full h-[80px]">
                     <label
@@ -216,9 +217,10 @@ const Register = function () {
                         }`}
                       />
                     </div>
-                    {errors.username && (
+                    {errors.username ? (
                       <p className="inputBoxError">{errors.username}</p>
-                    )}
+                    ) : (
+                      <p className="inputBoxError">{showError}{showSuccess}</p>)}
                   </div>
                   <div className="w-full h-[80px]">
                     <label
@@ -257,9 +259,10 @@ const Register = function () {
                           />
                         </PasswordToggleField.Toggle>
                       </div>
-                      {errors.password && (
+                      {errors.password ? (
                         <p className="inputBoxError">{errors.password}</p>
-                      )}
+                      ) : (
+                      <p className="inputBoxError">{showError}{showSuccess}</p>)}
                       {password && (
                         <>
                           <div

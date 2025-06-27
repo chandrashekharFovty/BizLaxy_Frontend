@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import { UserAvatar } from "../ui/UserAvatar";
 import { FollowButton } from "../ui/FollowButton";
 import { CountBadge } from "../ui/CountBadge";
-import officialIcon from "../../../public/Official Icon.png";
 import { SavePostBadge } from "../ui/SavePostBadge";
 import PostPopover, { PostModal } from "./PostPopover";
 
 const images = [
-  "../../../public/poster03.png",
-  "../../../public/poster01.png",
-  "../../../public/poster02.png",
+  "/poster03.png",
+  "/poster01.png",
+  "/poster02.png",
 ];
 
 interface PostProps {
@@ -50,19 +49,19 @@ export function Post({
   isMediaContent = false,
   onclose,
 }: PostProps) {
-  const [showFullTitle, setShowFullTitle] = useState(false);
+  // const [showFullTitle, setShowFullTitle] = useState(false);
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [isFollowing, setIsFollowing] = useState(false);
   const handleFollowToggle = () => setIsFollowing(!isFollowing);
 
-  const truncatedTitle =
-    content.title.length > content.titleLimit
-      ? content.title.slice(0, content.titleLimit) + "..."
-      : content.title;
+  // const truncatedTitle =
+  //   content.title.length > content.titleLimit
+  //     ? content.title.slice(0, content.titleLimit) + "..."
+  //     : content.title;
 
   const truncatedDescription =
     content.description.length > content.descpLimit
-      ? content.description.slice(0, content.descpLimit) + "..."
+      ? content.description.slice(0, content.descpLimit)
       : content.description;
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -93,7 +92,7 @@ export function Post({
                 />
               )}
               {showOfficialIcon && (
-                <img src={officialIcon} className="w-3 h-3" />
+                <img src="/OfficialIcon.png" className="w-3 h-3" />
               )}
               {showFollowButton && (
                 <FollowButton isFollowing={isFollowing} onClick={handleFollowToggle} />
@@ -111,15 +110,7 @@ export function Post({
       <div className=" text-sm text-[#050505] mt-2.5 w-full">
         <div className="w-[660px] h-auto overflow-hidden">
           <div className="dark:text-white font-semibold text-[#050505]">
-            {showFullTitle ? content.title : truncatedTitle}
-            {content.title.length > content.titleLimit && (
-              <button
-                onClick={() => setShowFullTitle(!showFullTitle)}
-                className="text-blue-400 text-[12px] ml-1 hover:underline"
-              >
-                {showFullTitle ? "See Less" : "see more"}
-              </button>
-            )}
+            {content.title}
           </div>
 
           <div className="dark:text-white text-[#464646] font-normal mt-2">
@@ -129,7 +120,7 @@ export function Post({
                 onClick={() => setShowFullDescription(!showFullDescription)}
                 className="text-blue-400 text-[12px] ml-1 hover:underline"
               >
-                {showFullDescription ? "See Less" : "see more"}
+                {showFullDescription ? "..." : "..."}
               </button>
             )}
           </div>

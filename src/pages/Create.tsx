@@ -81,7 +81,7 @@ function Create() {
                   setShowCreatePopover(false);
                 }}
               >
-                <img src="/addpost.png" alt="Add Post" className="w-7 h-7" />
+                <img src="/addPost.png" alt="Add Post" className="w-7 h-7" />
                 Post
               </button>
             </div>

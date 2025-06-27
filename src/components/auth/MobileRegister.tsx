@@ -375,7 +375,7 @@ export default function PhoneInputWithModal() {
   const selectedIndex = countries.findIndex(
     (c) => c.isoCode === selected?.isoCode
   );
-  console.log(selectedIndex)
+  //console.log(selectedIndex)
   const submitHandler = async (e) => {
     e.preventDefault();
     //console.log(phoneNumber);
@@ -495,9 +495,10 @@ export default function PhoneInputWithModal() {
                         maxLength={10}
                       />
                     </div>
-                    {errors.phone && (
+                    {errors.phone ? (
                       <p className="inputBoxError">{errors.phone}</p>
-                    )}
+                    ) : (
+                      <p className="inputBoxError">{showError}{showSuccess}</p>)}
                   </div>
                   <div className="">
                     <div className="mt-1 flex relative items-center">

@@ -129,7 +129,8 @@ const EmailOtpPage = () => {
                         />
                       ))}
                     </div>
-                    {error && <p className="inputBoxError">{error}</p>}
+                    {error ? (<p className="inputBoxError">{error}</p>): (
+                      <p className="inputBoxError">{showError}{showSuccess}</p>)}
                   </div>
                   <div className="">
                     <div className="">

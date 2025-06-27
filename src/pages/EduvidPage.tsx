@@ -3,27 +3,6 @@ import ReelCard from "../components/eduvid/eduvidCard"; // adjust the path if ne
 import Sidebar from "@/components/layout/Sidebar";
 import { RightSidebar } from "@/components/layout/RightSidebar";
 
-const reelsData = [
-  {
-    username: "john_doe",
-    caption: "Enjoying the view from the mountains 🏔️ #travel #adventure",
-    videoUrl: "/videos/reel1.mp4",
-    profileImage: "/images/user1.jpg",
-  },
-  {
-    username: "emma_w",
-    caption: "Behind the scenes of our latest shoot 🎬✨ #bts #film",
-    videoUrl: "/videos/reel2.mp4",
-    profileImage: "/images/user2.jpg",
-  },
-  {
-    username: "techguru",
-    caption: "AI is changing the game 🤖💡 #tech #future",
-    videoUrl: "/videos/reel3.mp4",
-    profileImage: "/images/user3.jpg",
-  },
-];
-
 const ReelsPage = () => {
   return (
     <div className="w-screen h-auto flex overflow-x-hidden overflow-y-clip">

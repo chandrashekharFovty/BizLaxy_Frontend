@@ -49,7 +49,7 @@ const OtpPage = () => {
     e.preventDefault();
     const fullOtp = otp.join("");
     if (fullOtp.length < 6 || otp.includes("")) {
-      setError ? "Please enter a valid 6-digit OTP" : showError;
+      setError("Please enter a valid 6-digit OTP");
       formRef.current.classList.remove("animationsubmit");
       void formRef.current.offsetWidth;
       formRef.current.classList.add("animationsubmit");
@@ -135,7 +135,8 @@ const OtpPage = () => {
                       />
                     ))}
                   </div>
-                  <p className="inputBoxError">{error}</p>
+                  {error ? (<p className="inputBoxError">{error}</p>) : (
+                      <p className="inputBoxError">{showError}{showSuccess}</p>)}
                   <div className="">
                     <div className="">
                       <button

@@ -31,12 +31,13 @@ const Editprofile: React.FC<EditprofileProps> = ({
                 {/* //<img src={ArrowImg} alt="<" className="w-5 h-5" /> */}
                 <span className="w-24 ml-0 items-start h-full pl-2 text-[#FFFFFF] font-normal">Back to Profile</span>
               </Link>
-              <h1 className="w-[130px] h-[30px] mt-5 -tracking-tighter  font-bold text-xl pl-5 text-[#FFFFFF]">
+              <h1 className="w-[130px] h-[30px] mt-5 -tracking-tighter  font-bold text-xl pl-5 text-white">
                 Edit Profile
               </h1>
               <div className="h-[34px] w-[148px] rounded-[6px] bg-[#948ab7] ml-[350px] mt-8 border border-transparent">
                 <button className="text-[#FFFFFF] px-2 py-1 text-[14px]  h-[16px] w-full font-normal tracking-[1px]">
-                  Edit Cover Image
+                  <label htmlFor="coverimage" className="cursor-pointer">Edit Cover Image</label>
+                  <input type="file" name="coverimage" id="coverimage" className="hidden"/>
                 </button>
               </div>
             </div>
@@ -123,6 +124,9 @@ const Editprofile: React.FC<EditprofileProps> = ({
                   />
                 </div>
               </div>
+              <div className="w-[798px] my-5 flex justify-end">
+              <button type="submit" className="bg-blue-600 p-3 rounded-xl text-white text-lg font-medium cursor-pointer">Save Details</button>
+            </div>
             </form>
           </div>
         </div>
@@ -153,11 +157,13 @@ const Editprofile: React.FC<EditprofileProps> = ({
               {website}
             </a>
             <div className="flex items-center gap-2 text-base text-[#050505] font-medium text-center tracking-[-0.16px] mt-[27px] max-md:max-w-full max-md:mt-10">
-              <button className="text-[#050505] self-stretch h-[46px] w-[120px] text-sm gap-2.5 my-auto px-5 py-2.5 rounded-xl bg-white border border-gray-300 max-md:px-3">
+              <button className="text-[#050505] self-stretch h-[46px] w-[120px] text-sm gap-2.5 my-auto px-5 py-2.5 rounded-xl hover:border-[color:var(--Btn-grdt,#1C4BC4)] hover:bg-[color:var(--Btn-grdt,#f1e9ff)] border bg-[rgba(239,239,239,1)] max-md:px-3">
                 Edit Details
               </button>
-              <button className="text-[#050505] self-stretch h-[46px] w-[150px] text-sm gap-2.5 my-auto px-2 py-2.5 rounded-xl bg-white border border-gray-300 max-md:px-1">
-                Edit Profile Image
+              <button className="text-[#050505] self-stretch h-[46px] w-[150px] text-sm gap-2.5 my-auto px-2 py-2.5 rounded-xl hover:border-[color:var(--Btn-grdt,#1C4BC4)] hover:bg-[color:var(--Btn-grdt,#f1e9ff)] border bg-[rgba(239,239,239,1)] max-md:px-1">
+                <label htmlFor="profileimage" className="cursor-pointer">Edit Profile Image</label>
+                  <input type="file" name="profileimage" id="profileimage" className="hidden"/>
+               
               </button>
             </div>
           </div>

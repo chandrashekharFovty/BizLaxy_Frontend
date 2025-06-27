@@ -1,5 +1,5 @@
 import react from 'react';
-
+//this function just for ref not used anywhere okay
 function Highlights(){
 
     return (

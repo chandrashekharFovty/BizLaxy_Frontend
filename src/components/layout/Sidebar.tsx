@@ -84,7 +84,7 @@ const Sidebar: React.FC = () => {
   const profileClass = (path: string) =>
     `${
       location.pathname.startsWith(path)
-        ? "text-black-900 font-medium"
+        ? "text-black-800 font-semibold"
         : "font-normal text-[16px]"
     }`;
 
@@ -232,7 +232,7 @@ const Sidebar: React.FC = () => {
               }
               className="aspect-[1] object-contain w-7 h-7 shrink-0"
             />
-            <div className="flex overflow-hidden max-lg:hidden text-[20px] font-normal">
+            <div className="flex overflow-hidden max-lg:hidden text-[20px]">
               <div className="dark:text-gray-300  cursor-pointer overflow-hidden">
                 Profile
               </div>
