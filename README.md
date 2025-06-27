@@ -14,7 +14,6 @@
 - **Backend**  
   - @piyushBarve (Piyush Barve)
 
-*(⚠️ Mention GitHub IDs exactly as they appear, e.g., `@chandrashekharFovty` if applicable)*
 
 ---
 
