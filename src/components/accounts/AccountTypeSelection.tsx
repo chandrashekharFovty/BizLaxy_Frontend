@@ -71,7 +71,7 @@ const SelectAccountType = () => {
           </p>
         </div>
 
-        <div className="w-[97%] overflow-scroll scrollbar-hide mt-[12%] h-[550px] flex flex-col gap-5 z-10">
+        <div className="w-[96%] overflow-scroll scrollbar-hide mt-[12%] h-[550px] flex flex-col gap-5 z-10">
           {options.map((opt, idx) => (
             <AccountOption
               key={idx}
@@ -84,7 +84,7 @@ const SelectAccountType = () => {
           ))}
         </div>
         <div className="fixed w-[1010px] h-16">
-          <div className="w-[90%] h-full flex justify-end items-center">
+          <div className="w-[95%] h-full flex justify-end items-center">
           {
             selected ? (
               // options.map((opt, idx) => (
