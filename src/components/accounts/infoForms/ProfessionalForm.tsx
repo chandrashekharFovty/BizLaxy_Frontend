@@ -9,7 +9,7 @@ import "../../../customDropDwon.css"; // Assuming you have some custom styles
 // import type { ICountry, IState, ICity } from "country-state-city";
 type OptionType = { label: string; value: string };
 // Options for MultiSelect businessType, industrySector, and businessModel
-const businessTypes: OptionType[] = [
+const businessTypes = [
   { label: "Manufacturer", value: "manufacturer" },
   { label: "Wholesaler", value: "wholesaler" },
   { label: "Exporter", value: "exporter" },
@@ -146,18 +146,23 @@ const CompanyForm: React.FC = () => {
     OptionType[]
   >([]);
 
-  const [selected, setSelected] = useState<OptionType[]>([]);
   const handleOnbusinesschange = (val) => {
+    setSelectedBusinessTypes(val);
     setbusinessvalue(val);
     handleChange(val);
+    handleBlur(val);
   };
   const handleOnindustrychange = (val) => {
+    setSelectedIndustries(val);
     setindustryvalue(val);
     handleChange(val);
+    handleBlur(val);
   };
   const handleOnbusinessModelchange = (val) => {
+    setSelectedBusinessModels(val);
     setvaluebusinessModel(val);
     handleChange(val);
+    handleBlur(val);
   };
 
   form.businessType = businessvalue;
@@ -241,9 +246,6 @@ const CompanyForm: React.FC = () => {
   //console.log("Progress Bar Width:", progressBarWidth);
 
   // Update the width of the progress bar dynamically
-  const progressBarStyle = {
-    width: progressBarWidth,
-  };
   //console.log("Progress Bar Style:", progressBarStyle);
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -270,11 +272,11 @@ const CompanyForm: React.FC = () => {
         <div className="fixed w-full flex gap-1">
           {progressbarArray.map((_, index) => (
             <div
-              className="w-[5.8%] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700"
+              className="w-[5.8%] bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-indigo-200"
               key={index}
             >
               <div
-                className={`bg-gradient-to-tr from-indigo-600 to-purple-500 h-2.5 rounded-full dark:bg-indigo-500 ${
+                className={`btn-gradient h-2.5 rounded-full dark:bg-indigo-500 ${
                   index < progress ? "w-full" : "w-0"
                 }`}
               ></div>
@@ -313,7 +315,7 @@ const CompanyForm: React.FC = () => {
                 <MultiSelect
                   options={businessTypes}
                   value={selectedBusinessTypes}
-                  onChange={setSelectedBusinessTypes}
+                  onChange={handleOnbusinesschange}
                   labelledBy="Business Type"
                   hasSelectAll
                   className="rmsc w-full h-[60px] placeholder:text-black mt-2 outline-[#BED3FF] border border-[#BED6FF] rounded-xl px-4 text-sm"
@@ -335,7 +337,7 @@ const CompanyForm: React.FC = () => {
                 <MultiSelect
                   options={industrySectors}
                   value={selectedIndustries}
-                  onChange={setSelectedIndustries}
+                  onChange={handleOnindustrychange}
                   labelledBy="Industry & Sector"
                   hasSelectAll
                   className="rmsc w-full h-[60px] placeholder:text-black mt-2 outline-[#BED3FF] border border-[#BED6FF] rounded-xl px-4 text-sm"
@@ -357,7 +359,7 @@ const CompanyForm: React.FC = () => {
                 <MultiSelect
                   options={businessModels}
                   value={selectedBusinessModels}
-                  onChange={setSelectedBusinessModels}
+                  onChange={handleOnbusinessModelchange}
                   labelledBy="Business Model"
                   hasSelectAll
                   className="rmsc w-full h-[60px] placeholder:text-black mt-2 outline-[#BED3FF] border border-[#BED6FF] rounded-xl px-4 text-sm"
@@ -379,7 +381,7 @@ const CompanyForm: React.FC = () => {
                   onClick={() => handleStageSelect("Early")}
                   className={`px-3 py-2 rounded-[6px] w-auto ${
                     form.companyStage === "Early"
-                      ? "bg-gradient-to-br from-indigo-600 to-purple-500 text-white"
+                      ? "btn-gradient text-white"
                       : "bg-[#EAF6FF]"
                   } border border-[#BED6FF] text-sm`}
                 >
@@ -390,7 +392,7 @@ const CompanyForm: React.FC = () => {
                   onClick={() => handleStageSelect("Growth")}
                   className={`px-3 py-2 rounded-[6px] w-auto ${
                     form.companyStage === "Growth"
-                      ? "bg-gradient-to-br from-indigo-600 to-purple-500 text-white"
+                      ? "btn-gradient text-white"
                       : "bg-[#EAF6FF]"
                   } border border-[#BED6FF] text-sm`}
                 >
@@ -401,7 +403,7 @@ const CompanyForm: React.FC = () => {
                   onClick={() => handleStageSelect("Mature")}
                   className={`px-3 py-2 rounded-[6px] w-auto ${
                     form.companyStage === "Mature"
-                      ? "bg-gradient-to-br from-indigo-600 to-purple-500 text-white"
+                      ? "btn-gradient text-white"
                       : "bg-[#EAF6FF]"
                   } border border-[#BED6FF] text-sm`}
                 >
@@ -546,6 +548,7 @@ const CompanyForm: React.FC = () => {
                     checked={form.referrals.includes("Facebook")}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    className="btn-gradient"
                   />{" "}
                   Facebook
                 </label>
@@ -557,6 +560,7 @@ const CompanyForm: React.FC = () => {
                     checked={form.referrals.includes("Instagram")}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                     className="btn-gradient"
                   />{" "}
                   Instagram
                 </label>
@@ -568,6 +572,7 @@ const CompanyForm: React.FC = () => {
                     checked={form.referrals.includes("YouTube")}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                     className="btn-gradient"
                   />{" "}
                   YouTube
                 </label>
@@ -579,6 +584,7 @@ const CompanyForm: React.FC = () => {
                     checked={form.referrals.includes("Friend")}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                     className="btn-gradient"
                   />{" "}
                   Friend
                 </label>
@@ -590,21 +596,21 @@ const CompanyForm: React.FC = () => {
                     checked={form.referrals.includes("Others")}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                     className="btn-gradient"
                   />{" "}
                   Others
                 </label>
-              </fieldset>
               {errors.referrals && (
                 <div className="text-red-500 text-sm mt-1">
                   {errors.referrals}
                 </div>
               )}
+              </fieldset>
             </div>
           </div>
-        </form>
         {/* Submit */}
-        <div className="fixed h-8 w-full">
-          <div className="w-[67%] h-full flex justify-end">
+        <div className="h-8 w-full">
+          <div className="w-[97%] h-full flex justify-end">
             <button
               onClick={() => {
                 onSubmit;
@@ -613,7 +619,7 @@ const CompanyForm: React.FC = () => {
               disabled={!isValid}
               className={`w-[122px] h-[51px] rounded-xl font-semibold text-lg ${
                 isValid
-                  ? "bg-[#1C4BC4] text-white"
+                  ? "btn-gradient text-white"
                   : "bg-gray-300 text-gray-600 cursor-not-allowed"
               }`}
             >
@@ -621,6 +627,7 @@ const CompanyForm: React.FC = () => {
             </button>
           </div>
         </div>
+        </form>
       </div>
     </>
   );

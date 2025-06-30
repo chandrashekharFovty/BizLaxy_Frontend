@@ -1,3 +1,4 @@
+/*reserved @ categories are here*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;...;1,900&display=swap");
 
@@ -5,7 +6,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/*reserved * categories are here*/
 * {
   font-family: poppins;
 }
@@ -212,5 +213,7 @@ sidebar-text::before {
 }
 
 .btn-gradient {
-  @apply bg-gradient-to-br from-[#1C4BC4] via-[#4470ff] to-[#9645FF];
+  @apply bg-gradient-to-br from-[#033dcf] via-[#5a07a7] to-[#8e48e9];
 }
+
+

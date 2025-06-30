@@ -93,7 +93,7 @@ const SelectAccountType = () => {
                 // title={opt.title}
                 // desc={opt.desc}
                 // selected={selected === opt.title}
-                className="w-[122px] h-[55px] cursor-pointer mt-6 px-6 py-2 border text-lg rounded-[10px] border-[#B0B0B0] text-white font-semibold bg-gradient-to-br from-blue-600 to-purple-600 hover:bg-blue-700"
+                className="w-[122px] h-[55px] cursor-pointer mt-6 px-6 py-2 border text-lg rounded-[10px] border-[#B0B0B0] text-white font-semibold btn-gradient hover:bg-blue-700"
                 //onClick={() => setSelected(opt.title)}
                 //onClick={() => setSelected(opt.title)}
                 onClick={() =>

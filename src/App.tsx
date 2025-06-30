@@ -31,7 +31,7 @@ import InfoForm from "./components/accounts/Info";
 import ProductList from "./components/Shops/ProductList";
 import ProductCartDetial from "./components/Shops/ProductCardDetails"; // ✅ Will use below
 import PrivateRoute from "./routes/PrivateRoute";
-
+import PitchDetails from "./components/pitch/PitchDetails";
 const appRouter = createBrowserRouter([
   { path: "/", element: <SignIn /> },
   { path: "/mobileregister", element: <MobileRegister /> },
@@ -69,6 +69,22 @@ const appRouter = createBrowserRouter([
   },
   {
     path: "/pitch",
+    element: (
+      <PrivateRoute>
+        <Pitch />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/pitch-details",
+    element: (
+      <PrivateRoute>
+        <PitchDetails />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/pitch-details",
     element: (
       <PrivateRoute>
         <Pitch />
@@ -174,6 +190,7 @@ function App() {
     <div className="w-screen h-screen overflow-x-hidden">
       <RouterProvider router={appRouter} />
       <Toaster />
+  
     </div>
   );
 }

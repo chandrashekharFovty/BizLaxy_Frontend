@@ -34,8 +34,12 @@ const Register = function () {
   const validatePassword = (v) =>
     !v
       ? "Please Enter your password"
-      : strength < 10 &&
-        "Password must be strong and have a mix of uppercase and lowercase letters, numbers, and symbols.       .";
+      : strength < 10
+      ? "Password must be strong and have a mix of uppercase and lowercase letters, numbers, and symbols."
+      : v.length < 8
+      ? "Password must be at least 8 characters"
+      : "";
+
   const validateFullname = (v) => {
     if (!v) return "Please Enter your full name";
     if (!/^[a-zA-Z\s]+$/.test(v)) return "Only letters and spaces allowed";
@@ -65,7 +69,7 @@ const Register = function () {
         ? "Weak"
         : percentage <= 66
         ? "Medium"
-        : percentage >= 75
+        : percentage >= 85
         ? "very Strong"
         : "strong";
 

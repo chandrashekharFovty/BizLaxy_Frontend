@@ -265,7 +265,7 @@ const CompanyForm: React.FC = () => {
   };
 
   return (
-    <>
+    <>                                                                    
       <div className="w-full h-auto">
         <div className="fixed w-full flex gap-1">
           {progressbarArray.map((_, index) => (
